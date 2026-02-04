@@ -1,0 +1,117 @@
+<div class="product-wrapper">
+
+  <!-- ICE CREAM -->
+  <div id="ice" class="product-card">
+    <h2>Ice Cream</h2>
+
+    <img [src]="iceImage" class="product-img" />
+
+    <label>Size</label>
+    <select [(ngModel)]="selectedSize">
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+    </select>
+
+    <p>Select flavour</p>
+
+    <div class="flavours">
+      <button class="flavour prune"
+        (click)="changeIce('purple','prune'); setActive($event)">
+        Prune
+      </button>
+
+      <button class="flavour squash"
+        (click)="changeIce('orange','squash'); setActive($event)">
+        Squash
+      </button>
+
+      <button class="flavour cherry"
+        (click)="changeIce('red','cherry'); setActive($event)">
+        Cherry
+      </button>
+    </div>
+
+    <button class="add-cart" (click)="openCart()">Add to cart</button>
+  </div>
+
+  <!-- POPSICLE -->
+  <div id="pop" class="product-card">
+    <h2>Popsicle</h2>
+
+    <img [src]="popImage" class="product-img" />
+
+    <label>Size</label>
+    <select [(ngModel)]="selectedSize">
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+    </select>
+
+    <p>Select flavour</p>
+
+    <div class="flavours">
+      <button class="flavour kiwi"
+        (click)="changePop('green','kiwi'); setActive($event)">
+        Kiwi
+      </button>
+
+      <button class="flavour mango"
+        (click)="changePop('yellow','mango'); setActive($event)">
+        Mango
+      </button>
+
+      <button class="flavour grape"
+        (click)="changePop('purple','grape'); setActive($event)">
+        Grape
+      </button>
+    </div>
+
+    <button class="add-cart" (click)="openCart()">Add to cart</button>
+  </div>
+
+</div>
+
+<!-- CART OVERLAY -->
+<div id="cart-overlay" class="cart-overlay" (click)="closeCart()"></div>
+
+<!-- CART POPUP  -->
+<div id="cart-popup" class="cart-popup">
+
+  <h3>Cart summary</h3>
+
+  <p><strong>{{ selectedProduct }}</strong></p>
+
+  <label>Flavor</label>
+  <select [(ngModel)]="selectedFlavour">
+    <option>prune</option>
+    <option>squash</option>
+    <option>cherry</option>
+    <option>kiwi</option>
+    <option>mango</option>
+    <option>grape</option>
+  </select>
+
+  <label>Size</label>
+  <select [(ngModel)]="selectedSize">
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+  </select>
+
+  <label>Quantity</label>
+  <div class="qty">
+    <button (click)="decreaseQty()">−</button>
+    <span>{{ quantity }}</span>
+    <button (click)="increaseQty()">+</button>
+    <span class="price">${{ total }}</span>
+  </div>
+
+  <p class="total-line">
+    <strong>Total</strong>
+    <strong>${{ total }}</strong>
+  </p>
+
+  <button class="checkout-btn" (click)="goBilling()">Checkout</button>
+
+</div>

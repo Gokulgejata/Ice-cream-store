@@ -1,0 +1,45 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE */
+.home {
+  text-align: center;
+  background: #f7f1e3;
+  min-height: 100vh;
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.card {
+  background: #f7f1e3;   
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  width: 180px;
+}
+
+/* IMAGE */
+.card img {
+  width: 140px;
+  display: block;
+  margin: 0 auto 10px;
+  background: #f7f1e3;   /* IMPORTANT */
+}
+
+/* TEXT */
+.card h3 {
+  margin-top: 10px;
+}

@@ -1,0 +1,77 @@
+<div class="billing-wrapper">
+
+  <!-- TOP BAR -->
+  <div class="top-link">
+    ← Continue shopping
+  </div>
+
+  <div class="billing-page">
+
+    <!-- LEFT -->
+    <div class="billing-left">
+      <div class="step-title">
+        <span class="step-circle">1</span>
+        <h2>Billing</h2>
+      </div>
+
+      <label>Full name</label>
+      <input type="text">
+
+      <label>Email</label>
+      <input type="email">
+
+      <label>Billing address</label>
+      <input type="text">
+
+      <div class="row">
+        <input type="text" placeholder="Apt/Suite">
+        <label class="checkbox">
+          <input type="checkbox">
+          I can’t find my address
+        </label>
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox">
+        Use different shipping address
+      </label>
+
+      <button class="primary-btn">
+        Continue to shipping
+      </button>
+    </div>
+
+    
+    <div class="billing-right">
+      <div class="summary-box">
+
+        <div class="summary-header">
+          <h3>Order summary</h3>
+          <span class="edit">Edit</span>
+        </div>
+
+        <div class="summary-row">
+          <span>{{ productName }}</span>
+          <span>x{{ quantity }}</span>
+          <span>${{ price }}</span>
+        </div>
+
+        <!-- QUANTITY CONTROLS -->
+        <div class="qty">
+          <button (click)="decrease()">−</button>
+          <span>{{ quantity }}</span>
+          <button (click)="increase()">+</button>
+          <span class="price">${{ total }}</span>
+        </div>
+
+        <div class="total-line">
+          <span>Total</span>
+          <strong>${{ total }}</strong>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+  </div>
+</div>
